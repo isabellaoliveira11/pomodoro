@@ -5,22 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro Timer Digital</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-
     <div class="timer-container">
+        <div class="header">
+            <div class="user-info">
+                <img src="assets/fotoisa.jpg" alt="Foto de Isabela" class="user-photo">
+                <div class="user-details">
+                    <p>Isabela Oliveira</p>
+                    <p>Level 1</p>
+                </div>
+            </div>
+        </div>
         <h1>Pomodoro Timer Digital</h1>
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+        <div id="progress-text">
+            <span id="progress-start">0 XP</span>
+            <span id="progress-end">64 XP</span>
+        </div>
         <div id="timer">25:00</div>
-        <button id="start" onclick="toggleTimer()">Iniciar</button>
-        <button id="reset" onclick="resetarTimer()">Resetar</button>
-
+        <div class="buttons">
+            <button id="start" onclick="toggleTimer()">Iniciar</button>
+            <button id="reset" onclick="resetarTimer()">Resetar</button>
+        </div>
+        <div id="tasks">
+            <div class="task-input-container">
+                <input type="text" id="task-input" placeholder="Digite sua tarefa">
+                <button id="add-task" onclick="adicionarTarefa()">
+                    <span class="plus-icon"><i class="fas fa-plus"></i></span>
+                </button>
+            </div>
+            <ul id="task-list"></ul> </div>
         <label class="switch">
             <input type="checkbox" id="themeToggle">
             <span class="slider"></span>
         </label>
     </div>
-
     <script src="script.js"></script>
-
 </body>
 </html>

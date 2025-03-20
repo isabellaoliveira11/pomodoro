@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body[data-theme="dark"] {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+.timer-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+/* Tema escuro no container */
+body[data-theme="dark"] .timer-container {
+    background-color: #444;
+}
+
+/* Timer centralizado */
+#timer {
+    font-size: 5em;
+    font-weight: bold;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 5px;
+    margin: 20px auto;
+    width: fit-content;
+    transition: background-color 0.3s ease;
+}
+
+body:not([data-theme="dark"]) #timer {
+    background-color: #ddd;
+}
+
+/* Container para centralizar os botões */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Botões */
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#start {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#start:hover {
+    background-color: #45a049;
+}
+
+#start[data-state="stop"] {
+    background-color: #f44336;
+}
+
+#start[data-state="stop"]:hover {
+    background-color: #d32f2f;
+}
+
+#reset {
+    background-color: #fbc12dbd;
+    color: white;
+}
+
+#reset:hover {
+    background-color: #e0a800;
+}
+
+/* Toggle centralizado embaixo dos botões */
+
+
+.switch {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 34px;
+    z-index: 999; /* Para ficar sempre acima de outros elementos */
+}
+
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #ccc;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Ícones de sol e lua */
+.slider:after {
+    content: "🌙";
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    opacity: 1;
+    transition: 0.4s;
+}
+
+input:checked + .slider:after {
+    content: "☀️";
+    left: 31px;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer Digital</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="timer-container">
+        <h1>Pomodoro Timer Digital</h1>
+        <div id="timer">25:00</div>
+        <button id="start" onclick="toggleTimer()">Iniciar</button>
+        <button id="reset" onclick="resetarTimer()">Resetar</button>
+
+        <label class="switch">
+            <input type="checkbox" id="themeToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
